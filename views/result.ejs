@@ -1,0 +1,30 @@
+
+
+  <%- include("./partials/header")%>
+
+  <%if(movieData.Response==`False`){%> 
+  <h1>Movie not found!</h1>
+  <%}else{%>
+    <h1>Results are</h1>
+    <div class= "row"> 
+    <%movieData['Search'].forEach(function(movie){%>
+      <div class="card" style="width: 22rem; width: 22rem;
+      margin-bottom: 13px;
+      margin-left: 13px;
+      margin-right: 13px;">
+        <img src="<%= movie.Poster%>" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title"><%= movie.Title%> </h5>
+  
+        <a href="/result/<%=movie.imdbID%> " class="btn btn-primary">Know More</a>
+      </div>
+      </div>
+      <%})%> 
+    <%}%> 
+    </div>
+  <%-include("./partials/footer")%>
+
+
+
+
+
