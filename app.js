@@ -22,10 +22,10 @@ app.get("/", (req, res)=>{
 app.get("/result",(req,res)=>{
     console.log(req.query.moviename)
 
-
-    const url=`http://www.omdbapi.com/?apikey=${process.env.api_key}&s=${req.query.moviename}`
+ const url=`http://www.omdbapi.com/?apikey=551b822a&s=${req.query.moviename}`;
+  //  const url=`http://www.omdbapi.com/?apikey=${process.env.api_key}&s=${req.query.moviename}`
     request(url,function (error, response, body) {
-        console.log(process.env.api_key)
+      //  console.log(process.env.api_key)
         console.error('error:', error);
             if (!error&&response.statusCode==200) {
                 console.log(response)
@@ -51,8 +51,8 @@ app.get("/result",(req,res)=>{
 
 
 app.get("/result/:id",(req, res)=>{
-    
-   const url = `http://www.omdbapi.com/?apikey=${process.env.api_key}&i=${req.params.id}`;
+    const url = `http://www.omdbapi.com/?apikey=551b822a&i=${req.params.id}`;
+   //const url = `http://www.omdbapi.com/?apikey=${process.env.api_key}&i=${req.params.id}`;
    request(url, function(error, response, body) {
     if (!error && response.statusCode == 200) {
         const data = JSON.parse(body)
@@ -79,7 +79,7 @@ app.get("*", (req, res)=>{
 
 
 app.listen(process.env.port, function(){
-    console.log(`server started at ${process.env.port}`);
+    console.log("server has started");
 });
 
 
