@@ -78,7 +78,7 @@ app.get("*", (req, res)=>{
 
 
 
-app.listen(process.env.port, function(){
+app.listen(3000, function(){
     console.log("server has started");
 });
 
